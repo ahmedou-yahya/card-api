@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "b46d6f66-0442-4dec-a863-369fbdf415d1",
+		"name": "ESP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-produit",
+			"item": [
+				{
+					"name": "getProduit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/apiproduit/produits",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Produit par vendeur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiproduit/produits/vendeur/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produits",
+								"vendeur",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Produits Disponibles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiproduit/produits/disponible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produits",
+								"disponible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Produit par marque",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiproduit/produits/marque/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produits",
+								"marque",
+								"2"
+							],
+							"query": [
+								{
+									"key": "idMarque",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Produit parcategorie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiproduit/produits/categorie/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produits",
+								"categorie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"sku\": \"4-sku\",\n    \"codeBarre\": \"000000001\",\n    \"libelle\": \"telephone\",\n    \"prix\": 500,\n    \"prixBarre\": 600,\n    \"images\": [\n        \"image1.com\",\n        \"image2.com\",\n        \"image3.com\"\n    ],\n    \"description\": \"telephone iphone 12 \",\n    \"categorie\": {\n        \"id\": \"01\",\n        \"libelle\": \"Telephone et Tablette\",\n        \"descriptio\": null\n    },\n    \"vendeur\": {\n        \"id\": \"01\",\n        \"nom\": \"ravah\",\n        \"logo\": null,\n        \"site\": \"nezaha.mr\"\n    },\n    \"disponible\": false,\n    \"stock\": 50,\n    \"marque\": {\n        \"id\": \"02\",\n        \"nom\": \"Nokia\",\n        \"logo\": null,\n        \"site\": \"nokia.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/apiproduit/produit/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produit",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produit save all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": 1,\n        \"sku\": \"1-sku\",\n        \"codeBarre\": \"000000001\",\n        \"libelle\": \"telephone\",\n        \"prix\": 500,\n        \"prixBarre\": null,\n        \"images\": [\n            \"image1.com\",\n            \"image2.com\",\n            \"image3.com\"\n        ],\n        \"description\": \"telephone iphone 12 \",\n        \"categorie\": {\n            \"id\": 1,\n            \"libelle\": \"Telephone et Tablette\",\n            \"description\": null\n        },\n        \"vendeur\": {\n            \"id\": 1,\n            \"nom\": \"ravah\",\n            \"logo\": null,\n            \"site\": \"nezaha.mr\"\n        },\n        \"disponible\": true,\n        \"stock\": 50,\n        \"marque\": {\n            \"id\": 1,\n            \"libelle\": null,\n            \"logo\": null,\n            \"site\": \"apple.com\"\n        },\n        \"nutriton\": null\n    },\n    {\n        \"id\": 2,\n        \"sku\": \"2-sku\",\n        \"codeBarre\": \"000000001\",\n        \"libelle\": \"telephone\",\n        \"prix\": 500,\n        \"prixBarre\": null,\n        \"images\": [\n            \"image1.com\",\n            \"image2.com\",\n            \"image3.com\"\n        ],\n        \"description\": \"telephone iphone 12 \",\n        \"categorie\": {\n            \"id\": 1,\n            \"libelle\": \"Telephone et Tablette\",\n            \"description\": null\n        },\n        \"vendeur\": {\n            \"id\": 1,\n            \"nom\": \"ravah\",\n            \"logo\": null,\n            \"site\": \"nezaha.mr\"\n        },\n        \"disponible\": true,\n        \"stock\": 50,\n        \"marque\": {\n            \"id\": 1,\n            \"libelle\": null,\n            \"logo\": null,\n            \"site\": \"apple.com\"\n        },\n        \"nutriton\": null\n    },\n    {\n        \"id\": 3,\n        \"sku\": \"3-sku\",\n        \"codeBarre\": \"000000001\",\n        \"libelle\": \"telephone\",\n        \"prix\": 500,\n        \"prixBarre\": null,\n        \"images\": [\n            \"image1.com\",\n            \"image2.com\",\n            \"image3.com\"\n        ],\n        \"description\": \"telephone iphone 12 \",\n        \"categorie\": {\n            \"id\": 1,\n            \"libelle\": \"Telephone et Tablette\",\n            \"description\": null\n        },\n        \"vendeur\": {\n            \"id\": 1,\n            \"nom\": \"ravah\",\n            \"logo\": null,\n            \"site\": \"nezaha.mr\"\n        },\n        \"disponible\": false,\n        \"stock\": 50,\n        \"marque\": {\n            \"id\": 1,\n            \"libelle\": null,\n            \"logo\": null,\n            \"site\": \"apple.com\"\n        },\n        \"nutriton\": null\n    },\n    {\n        \"id\": 4,\n        \"sku\": \"4-sku\",\n        \"codeBarre\": \"000000001\",\n        \"libelle\": \"telephone\",\n        \"prix\": 500,\n        \"prixBarre\": null,\n        \"images\": [\n            \"image1.com\",\n            \"image2.com\",\n            \"image3.com\"\n        ],\n        \"description\": \"telephone iphone 12 \",\n        \"categorie\": {\n            \"id\": 1,\n            \"libelle\": \"Telephone et Tablette\",\n            \"description\": null\n        },\n        \"vendeur\": {\n            \"id\": 1,\n            \"nom\": \"ravah\",\n            \"logo\": null,\n            \"site\": \"nezaha.mr\"\n        },\n        \"disponible\": false,\n        \"stock\": 50,\n        \"marque\": {\n            \"id\": 2,\n            \"libelle\": null,\n            \"logo\": null,\n            \"site\": \"nokia.com\"\n        },\n        \"nutriton\": null\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/apiproduit/produits/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiproduit",
+								"produits",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "api-panier",
+			"item": [
+				{
+					"name": "synhronier",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.clearGlobalVariable(\"panier\");",
+									"postman.setEnvironmentVariable(\"panier\", JSON.stringify(jsonData));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dateClient\": \"2021-03-14T22:50:00.508+01:00\",\n    \"dernierPanier\":null,\n    \"evenements\": [\n        {\n            \"dateEvenement\":  \"2021-03-28T10:45:20.826Z\",\n            \"idProduit\": \"1\",\n            \"quantite\": 3,\n            \"commentaire\": \"un commentaire\",\n            \"substitution\": true\n        },\n        {\n            \"dateEvenement\":  \"2021-03-14T22:51:00.508+01:00\",\n            \"idProduit\": \"2\",\n            \"quantite\": 3,\n            \"commentaire\": \"un commentaire\",\n            \"substitution\": false\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api-panier/panier/synchronize?clientId=123e4567-e89b-42d3-a456-556642440000",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api-panier",
+								"panier",
+								"synchronize"
+							],
+							"query": [
+								{
+									"key": "clientId",
+									"value": "123e4567-e89b-42d3-a456-556642440000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
